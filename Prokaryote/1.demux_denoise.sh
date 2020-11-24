@@ -1,5 +1,5 @@
 #!/bin/bash
-#Please download the raw data from sra.
+#Please download related raw data (V34-SP) from sra (PRJNA680376).
 set -e
 
 WD=`pwd`
