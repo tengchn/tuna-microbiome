@@ -6,10 +6,10 @@ mkdir -p $WD/Ceph
 mkdir -p $WD/Crust
 #BarcodeE.fasta contain all the barcode sequences of Ceph forward primers
 cutadapt -e 0 --no-indels -m 100 -g file:BarcodeE.fasta -o $WD/Ceph/{name}.fastq.gz CC-SP_S1_L001_R1+R2_001_trim_rev_adapter.fastq.gz --untrimmed-output $WD/Ceph/CC-SP_S1_L001_R1+R2_001.E-untrimmed.fastq.gz > Library.R1+R2.Ceph-E.log
-
+wait
 #BarcodeC.fasta contain all the barcode sequences of Crust forward primers
 cutadapt -e 0 --no-indels -m 100 -g file:BarcodeC.fasta -o $WD/Crust/{name}.fastq.gz CC-SP_S1_L001_R1+R2_001_trim_rev_adapter.fastq.gz --untrimmed-output $WD/Crust/CC-SP_S1_L001_R1+R2_001.C-untrimmed.fastq.gz > Library.R1+R2.crust-C.log
-
+wait
 #Use Barcode-Crust-C$i and Barcode-Ceph-E$i to demultiplex each individuals 
 for i in `seq 1 10`;do
 
@@ -21,4 +21,3 @@ wait
 done
 
 #Following analysis was performed using MiFish pipeline 
-
