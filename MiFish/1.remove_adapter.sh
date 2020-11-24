@@ -1,4 +1,5 @@
 #!/bin/bash
+#Please download related raw data (MF-SP) from sra (PRJNA680376).
 #As the amplicon size of MiFish libarary are just around 220bp, so both the forward and reverse miseq reads can cover the whole length. 
 set -e
 #This step was used to remove the reverse primer's adapter and sequencing primer at the end of the forward reads.
